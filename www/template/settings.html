@@ -1,0 +1,45 @@
+<div class="modal slide-in-up">
+	<header class="bar bar-header bar-positive">
+		<h1 class="title">Settings</h1>
+		<button class="button button-icon icon ion-ios-close" ng-click="settingsClose()"></button>
+	</header>
+	<ion-content class="padding has-header">
+		<ul class="list">
+			<li class="item item-toggle">
+				Use wordpress API
+				<label class="toggle toggle-positive">
+					<input type="checkbox" ng-model="wordpress.show" ng-click="wordpress.useWordpress()">
+					<div class="track">
+						<div class="handle"></div>
+					</div>
+				</label>
+			</li>
+		</ul>
+
+		<div class="card" ng-show="!wordpress.show">
+			<div class="item item-text-wrap">
+				<div class="list">
+					<form name="editSettingsForm" novalidate>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">YT API Key</span>
+							<input type="text" placeholder="Youtube API Key" ng-model="youtubeParams.key" ng-required="true">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Search</span>
+							<input type="text" placeholder="Search" ng-model="youtubeParams.q" ng-required="true">
+						</label>
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Channel ID</span>
+							<input type="text" placeholder="Channel ID" ng-model="youtubeParams.channelid" ng-required="true">
+						</label>
+						<label>
+							<button class="button button-block button-positive" ng-disabled="editSettingsForm.$invalid" ng-click="settingsClose()">
+								Update settings
+							</button>
+						</label>
+					</form>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</div>
