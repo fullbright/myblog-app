@@ -41,6 +41,10 @@
         <button class="button button-icon icon ion-ios-cog" ng-click="settingsClick()"></button>
       </ion-header-bar>
       <ion-content>
+        <ion-refresher
+          pulling-text="Pull to refresh..."
+          on-refresh="wordpress.useWordpress()">
+        </ion-refresher>
         <div class="list card" ng-repeat="article in articles">
 
         <div class="item item-avatar">

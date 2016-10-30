@@ -74,6 +74,10 @@
         })
         .error(function(response, status){
           console.log("Error while receiving the response. " + status + response);
+        })
+        .finally(function() {
+          // Stop the ion-refresher from spinning
+          $scope.$broadcast('scroll.refreshComplete');
         });
 
     };
